@@ -1,6 +1,6 @@
 ---
 - name: AUTOMATIC BACKUP OF RUNNING-CONFIG
-  hosts: csr
+  hosts: reserved
   gather_facts: false
   connection: local
  
@@ -14,4 +14,4 @@
    - name: SAVE OUTPUT TO ./backups/
      copy:
        content: "{{ config.stdout[0] }}"
-       dest: "./backups/show_run_{{ inventory_hostname }}.txt"
+       dest: "/home/devasc/Documents/IaCExperiments/AnsibleVirtualRouter/script2_show_run_{{ inventory_hostname }}.txt"

@@ -1,6 +1,6 @@
 ---
 - name: CONFIGURE LOGBUFFER 
-  hosts: csr
+  hosts: iosxe_reserved
   gather_facts: False
   connection: local
   become: yes

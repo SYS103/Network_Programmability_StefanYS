@@ -1,12 +1,12 @@
 ---
 - name: CONFIGURE DEVICE HOSTNAME
-  hosts: csr
+  hosts: iosxr_reserved
   gather_facts: false
-  connection: local
+  connection: network_cli
   become: yes
   become_method: enable
 
   tasks:
   - name: update hostname
     ios_system:
-      hostname: "CSR-virtual"
+      hostname: "xrv9k_StefanYS"

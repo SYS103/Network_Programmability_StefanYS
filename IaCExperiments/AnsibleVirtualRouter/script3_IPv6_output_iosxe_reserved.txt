@@ -1,0 +1,13 @@
+GigabitEthernet1       [up/up]
+    FE80::1:107
+    2001:DB8:ACAD:1::107
+GigabitEthernet2       [administratively down/down]
+    unassigned
+GigabitEthernet3       [administratively down/down]
+    unassigned
+Loopback0              [up/up]
+    unassigned
+Loopback109            [up/up]
+    unassigned
+VirtualPortGroup0      [up/up]
+    unassigned

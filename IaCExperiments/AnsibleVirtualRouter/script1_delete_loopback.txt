@@ -1,0 +1,53 @@
+
+PLAY [Gather information about IP interfaces on CSR1Kv] ****************************************************************
+
+TASK [Gather information about IP interfaces] **************************************************************************
+ok: [iosxe_reserved]
+ok: [iosxr_reserved]
+ok: [nx_reserved]
+
+TASK [Display IP interface information] ********************************************************************************
+ok: [nx_reserved] => {
+    "interface_info.stdout_lines": [
+        [
+            "IP Interface Status for VRF \"default\"(1)",
+            "Interface            IP Address      Interface Status"
+        ]
+    ]
+}
+ok: [iosxe_reserved] => {
+    "interface_info.stdout_lines": [
+        [
+            "Interface              IP-Address      OK? Method Status                Protocol",
+            "GigabitEthernet1       10.10.20.48     YES NVRAM  up                    up      ",
+            "GigabitEthernet2       unassigned      YES NVRAM  administratively down down    ",
+            "GigabitEthernet3       unassigned      YES NVRAM  administratively down down    ",
+            "Loopback0              10.0.0.1        YES NVRAM  up                    up      ",
+            "Loopback109            10.255.255.9    YES NVRAM  up                    up      ",
+            "VirtualPortGroup0      192.168.1.1     YES NVRAM  up                    up"
+        ]
+    ]
+}
+ok: [iosxr_reserved] => {
+    "interface_info.stdout_lines": [
+        [
+            "Mon Dec 30 18:32:59.477 UTC",
+            "",
+            "Interface                      IP-Address      Status          Protocol Vrf-Name",
+            "MgmtEth0/RP0/CPU0/0            10.10.20.35     Up              Up       default ",
+            "GigabitEthernet0/0/0/0         unassigned      Shutdown        Down     default ",
+            "GigabitEthernet0/0/0/1         unassigned      Shutdown        Down     default ",
+            "GigabitEthernet0/0/0/2         unassigned      Shutdown        Down     default ",
+            "GigabitEthernet0/0/0/3         unassigned      Shutdown        Down     default ",
+            "GigabitEthernet0/0/0/4         unassigned      Shutdown        Down     default ",
+            "GigabitEthernet0/0/0/5         unassigned      Shutdown        Down     default ",
+            "GigabitEthernet0/0/0/6         unassigned      Shutdown        Down     default"
+        ]
+    ]
+}
+
+PLAY RECAP *************************************************************************************************************
+iosxe_reserved             : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+iosxr_reserved             : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+nx_reserved                : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

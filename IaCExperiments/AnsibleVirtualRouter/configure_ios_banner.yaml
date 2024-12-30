@@ -1,6 +1,6 @@
 ---
 - name: CONFIGURE LOGIN BANNER
-  hosts: csr
+  hosts: reserved
   gather_facts: false
   connection: local
   become: yes

@@ -1,6 +1,6 @@
 ---
 - name: CONFIGURE IPv6 ADDRESSING
-  hosts: csr
+  hosts: reserved
   gather_facts: false
   connection: local
 
@@ -22,4 +22,4 @@
    - name: SAVE OUTPUT ./ios_configurations/
      copy: 
        content: "{{ output.stdout[0] }}"
-       dest: "ios_configurations/IPv6_output_{{ inventory_hostname }}.txt"
+       dest: "/home/devasc/Documents/IaCExperiments/AnsibleVirtualRouter/script3_IPv6_output_{{ inventory_hostname }}.txt"
