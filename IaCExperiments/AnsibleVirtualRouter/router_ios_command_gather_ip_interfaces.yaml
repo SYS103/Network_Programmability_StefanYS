@@ -1,6 +1,6 @@
 ---
 - name: Gather information about IP interfaces on CSR1Kv
-  hosts: reserved
+  hosts: iosxe_reserved
   gather_facts: no
   connection: local
   tasks:
