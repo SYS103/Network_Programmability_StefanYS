@@ -13,7 +13,7 @@ RESTCONF_USERNAME = "developer"
 RESTCONF_PASSWORD = "C1sco12345"
 basicauth = (RESTCONF_USERNAME, RESTCONF_PASSWORD)
 api_url = f"https://{IP_ADDRESS}/restconf/data/ietf-interfaces:interfaces"
-headers = { "Accept": "application/yang-data+xml",  "Content-type":"application/yang-data+json" }
+headers = { "Accept": "application/yang-data+json",  "Content-type":"application/yang-data+json" }
 
 #### Step 3: Create a variable to send the request and store the JSON response
 resp = requests.get(api_url, auth=basicauth, headers=headers, verify=False)

@@ -5,24 +5,24 @@ import json
 import requests
 requests.packages.urllib3.disable_warnings()
 #### Step 2: Create the variables that will be the components of the request
-IP_HOST="https://sandboxdnac.cisco.com"
-RESTCONF_USERNAME="Enter your username"
-RESTCONF_PASSWORD="Enter your password"
+IP_ADDRESS= "10.10.20.48"
+RESTCONF_USERNAME= "developer"
+RESTCONF_PASSWORD= "C1sco12345"
 DATA_FORMAT="application/yang-data+json"
-api_url = f"https://{IP_HOST}/restconf/data/ietf-interfaces:interfaces/interface=Loopback101"
+api_url = f"https://{IP_ADDRESS}/restconf/data/ietf-interfaces:interfaces/interface=Loopback102"
 headers = { "Accept": "application/yang-data+json",  "Content-type":"application/yang-data+json"  }
 basicauth = (RESTCONF_USERNAME, RESTCONF_PASSWORD)
 
 yangConfig = {
   "ietf-interfaces:interface": {
-     "name": "Loopback101",
-     "description": "RESTCONF loopback 101",
+     "name": "Loopback102",
+     "description": "RESTCONF loopback 102",
      "type": "iana-if-type:softwareLoopback",
      "enabled": True,
      "ietf-ip:ipv4": {
          "address": [
              {
-                 "ip": "10.1.0.1",
+                 "ip": "10.2.0.1",
                  "netmask": "255.255.255.0"
              }
          ]
